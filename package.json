@@ -1,16 +1,20 @@
 {
-  "name": "untitled1",
+  "name": "sse_test",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "print": "echo $(pwd)",
+    "start-server": "node sse-server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"cd sse-client && npm run start\" \"npm run start-server\" \"npm run print\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "concurrently": "^7.6.0",
     "cors": "^2.8.5",
     "express": "^4.17.1"
   }
